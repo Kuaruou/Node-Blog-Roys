@@ -1,6 +1,6 @@
 # Node-Blog-Roys
 
-### [[網站連結]](https://kuaruou.github.io/Ecom-Vintage/#/) ###
+### [[網站連結]](https://kuaruou.github.io/Node-Blog-Roys/#/) ###
 ![image](https://github.com/Kuaruou/Ecom-Vintage/blob/master/web-img/cover.png)
 
 ## 簡介
