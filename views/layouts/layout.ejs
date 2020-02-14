@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Roy's Hideout</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <!-- 圖片來源：http://www.gratisography.com/#objects -->
+  <style>
+    .breadcrumb {
+      background-color: transparent;
+    }
+    /* typography design */
+    .text-primary {
+      color: #00cc99 !important;
+    }
+    .post {
+      line-height: 1.8;
+    }
+    .body-container {
+      min-height: calc(100vh - 72px - 56px); /*保持畫面滿版*/
+      height: auto !important;
+    }
+  </style>
+</head>
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #00cc99;">
+    <a class="navbar-brand" href="/">
+      <i class="fas fa-warehouse" aria-hidden="true"></i>
+      Roy's Hideout
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav mr-auto">
+        <% for (prop in categories) { %>
+        <a class="nav-item nav-link text-white" href="/section/<%- prop %>"><%- categories[prop].name %>
+          <span class="sr-only">(current)</span>
+        </a>
+        <% } %>
+      </div>
+      <div class="navbar-nav ml-auto"> 
+        <a class="nav-item nav-link text-white" href="/auth/signup">註冊
+          <span class="sr-only">(current)</span>
+        </a>
+        <a class="nav-item nav-link text-white" href="/auth/signin">登入
+          <span class="sr-only">(current)</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+  <div class="container body-container">
+    <%- content %>
+  </div>
+  <footer class="bg-light text-muted py-3">
+    <div class="container">
+      <ul class="list-unstyled d-flex justify-content-between">
+        <li class="">© Copright 2020 Roy's Hideout</li>
+        <li class="ml-auto"><a class="text-info mr-1" href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a> <a class="text-info mr-1" href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a> <a href="" class="text-info"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+      </ul>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+</html>
