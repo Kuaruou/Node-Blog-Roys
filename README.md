@@ -33,8 +33,34 @@
 </p>
 
 ## 分頁說明
+<h3>前台</h3>
 
+<h4>首頁</h4>
+<p>呈現最新的部落格文章，在Navbar上文章分類方便尋找同種類文章。</p>
 
+![image](https://github.com/Kuaruou/Node-Blog-Roys/blob/master/img/index.png)
+
+<h4>文章</h4>
+<p>點選各篇文章可以在內文上方點選同分類文章，在下方有Disqus留言板可進行留言。</p>
+
+![image](https://github.com/Kuaruou/Node-Blog-Roys/blob/master/img/article.png)
+
+<h3>後台</h3>
+
+<h4>登入</h4>
+<p>在Navbar右上方從後台管理進入會先要求登入，點選其他後台功能會被導回登入頁面，若未註冊按下註冊按鈕後會到註冊頁面。</p>
+
+![image](https://github.com/Kuaruou/Node-Blog-Roys/blob/master/img/login.png)
+
+<h4>文章管理</h4>
+<p>登入成功後會轉址到文章管理頁面，內文上有flash會顯示一次歡迎回來的文字。可以對文章進行新增、編輯和刪除。</p>
+
+![image](https://github.com/Kuaruou/Node-Blog-Roys/blob/master/img/archives.png)
+
+<h4>分類管理</h4>
+<p>分類管理可以對文章類別進行新增、編輯和刪除。若文章沒有類別則會顯示沒有分類。</p>
+
+![image](https://github.com/Kuaruou/Node-Blog-Roys/blob/master/img/categories.png)
 
 ## Project setup
 ```
