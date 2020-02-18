@@ -25,6 +25,7 @@
   <code>Firebase</code>
   <code>Heroku</code>
   <code>EJS</code>
+  <code>connect-flash</code>
   <code>moment</code>
   <code>striptags</code>
   <code>dotenv</code>
