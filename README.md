@@ -1,6 +1,7 @@
 # Node-Blog-Roys
 
 ### [[網站連結]](https://royshideout-node-blog.herokuapp.com/) ###
+![image](https://github.com/Kuaruou/Node-Blog-Roys/blob/master/img/index.png)
 
 ## 簡介
 <h4>本部落格為<code>Node.js</code>練習作品，主要的功能有:</h4>
