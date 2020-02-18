@@ -2,13 +2,17 @@
 
 <div class="row justify-content-center">
   <div class="col-md-6">
-    
-
-    
+    <div class="col-md-12">
+      <% if (hasSignin) { %>
+      <div class="alert alert-success text-center">
+        <h2><%- signin %></h2>
+      </div>
+      <% } %>
+      </div>
 
     <div class="btn-group w-100">
-      <a href="/dashboard/archives?status=public" class="btn btn-outline-secondary w-100 rounded-0 <% if (status === 'public') { %>active<% } %>">已發佈</a>
-      <a href="/dashboard/archives?status=draft" class="btn btn-outline-secondary w-100 rounded-0 <% if (status === 'draft') { %>active<% } %>">草稿</a>
+      <a href="/dashboard?status=public" class="btn btn-outline-secondary w-100 rounded-0 <% if (status === 'public') { %>active<% } %>">已發佈</a>
+      <a href="/dashboard?status=draft" class="btn btn-outline-secondary w-100 rounded-0 <% if (status === 'draft') { %>active<% } %>">草稿</a>
       <a href="/dashboard/article/create" class="btn btn-primary">新增文章</a>
     </div>
 
@@ -57,7 +61,7 @@
           method: 'POST', 
         }).done(function(response){
           console.log(response)
-          window.location = '/dashboard/archives'
+          window.location = '/dashboard'
         })
       }
     })

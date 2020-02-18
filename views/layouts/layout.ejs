@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Roy's Hideout</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
@@ -16,7 +17,7 @@
     }
     /* typography design */
     .text-primary {
-      color: #00cc99 !important;
+      color: #0089A7 !important;
     }
     .post {
       line-height: 1.8;
@@ -25,9 +26,13 @@
       min-height: calc(100vh - 72px - 56px); /*保持畫面滿版*/
       height: auto !important;
     }
+    .pagination li a .active {
+    background: #d14836;
+    color: white;
+    }
   </style>
 </head>
-  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #00cc99;">
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2B5F75;">
     <a class="navbar-brand" href="/">
       <i class="fas fa-warehouse" aria-hidden="true"></i>
       Roy's Hideout
@@ -45,10 +50,7 @@
         <% } %>
       </div>
       <div class="navbar-nav ml-auto"> 
-        <a class="nav-item nav-link text-white" href="/auth/signup">註冊
-          <span class="sr-only">(current)</span>
-        </a>
-        <a class="nav-item nav-link text-white" href="/auth/signin">登入
+        <a class="nav-item nav-link text-white" href="/auth/signin">後台管理
           <span class="sr-only">(current)</span>
         </a>
       </div>

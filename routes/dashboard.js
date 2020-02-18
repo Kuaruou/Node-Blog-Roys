@@ -8,16 +8,17 @@ var categoriesRef = firebaseAdminDb.ref('/categories/');
 var articlesRef = firebaseAdminDb.ref('/articles/')
 
 //後台文章管理
-router.get('/', function(req, res){
-  const messages = req.flash('error');
-  res.render('dashboard/index', {
-    currentPath: '/',
-    hasErrors: messages.length > 0,
-  });
-});
+// router.get('/', function(req, res){
+//   const messages = req.flash('error');
+//   res.render('dashboard/index', {
+//     currentPath: '/',
+//     hasErrors: messages.length > 0,
+//   });
+// });
 
-router.get('/archives', function(req, res, next) {
+router.get('/', function(req, res, next) {
   const status = req.query.status || 'public';
+  const signin = req.flash('signin');
   console.log(status);
   let categories = {};
   categoriesRef.once('value').then(function(snapshot){
@@ -37,6 +38,8 @@ router.get('/archives', function(req, res, next) {
       striptags,
       moment,
       status,
+      signin,
+      hasSignin: signin.length > 0,
     })
   })
 });

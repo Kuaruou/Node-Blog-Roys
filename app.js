@@ -68,4 +68,3 @@ app.use(function(req, res, next) {
 module.exports = app;
 
 app.listen(5000);
-console.log("the port is running on 5000");

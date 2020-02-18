@@ -47,12 +47,12 @@ router.post('/signup', function(req, res){
 router.post('/signin', function(req, res){
   const email = req.body.email;
   const password = req.body.password;
-  
   firebaseClient.auth().signInWithEmailAndPassword(email, password)
   .then(function(user) {
     req.session.uid = user.user.uid;
     req.session.mail = req.body.email;
-    console.log('session', req.session.uid);
+    req.flash('signin', '歡迎回來！');
+    // console.log('session', req.session.uid);
     res.redirect('/dashboard');
   })
   .catch(function(error){
