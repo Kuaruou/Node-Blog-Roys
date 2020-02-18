@@ -54,6 +54,7 @@
 
 <h4>文章管理</h4>
 <p>登入成功後會轉址到文章管理頁面，內文上有flash會顯示一次歡迎回來的文字。可以對文章進行新增、編輯和刪除。</p>
+<p>(connect-flash是Node.js的一個模組，簡單來說flash是一個暫存器，且暫存器裡面的值使用過一次即被清空，這種特性相當適合當作網站的提示訊息。)</p>
 
 ![image](https://github.com/Kuaruou/Node-Blog-Roys/blob/master/img/archives.png)
 
