@@ -67,7 +67,7 @@
 ```
 npm install
 ```
-<p>提醒：每個人需要自行操作Firebase來獲得私密金鑰且連結資料庫，由於.env內含安全敏感資訊也請不要將之上傳到Github，本專案環境變數設定於Heroku專案中。</p>
+<p>提醒：每個人需要自行操作Firebase來獲得私密金鑰且連結資料庫，由於.env內含安全敏感資訊也請不要將之上傳到Github，本專案環境變數設定於Heroku專案中。( Repository --> Setting --> Config Vars )</p>
 
 
 
