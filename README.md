@@ -75,7 +75,7 @@ const authCheck = function (req, res, next) {
 
 ![image](https://github.com/Kuaruou/Node-Blog-Roys/blob/master/img/signin-error.png)
 
-<p>發出登入錯誤訊息。</p>
+<p>發出登入錯誤訊息。(@auth.js)</p>
 
 ```js
 router.post('/signin', function(req, res){
@@ -97,7 +97,7 @@ router.post('/signin', function(req, res){
 })
 ```
 
-<p>接收登入錯誤訊息。</p>
+<p>接收登入錯誤訊息。(@auth.js)</p>
 
 ```js
 router.get('/signin', function(req, res){
