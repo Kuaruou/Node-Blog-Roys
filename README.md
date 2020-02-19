@@ -63,12 +63,56 @@
 const authCheck = function (req, res, next) {
   console.log('middleware', req.session);
   if (req.session.uid === process.env.ADMIN_UID) {
-    //使別人無法登入自己的uid
+    //在環境變數設定自己的uid使別人沒有權限無法登入
     return next();
   } else {
     return res.redirect('/auth/signin');
   }
 }
+```
+
+<p>若輸入錯誤帳號密碼會以flash在上方出現錯誤訊息提示。</p>
+
+![image](https://github.com/Kuaruou/Node-Blog-Roys/blob/master/img/signin-error.png)
+
+<p>發出登入錯誤訊息。(@auth.js)</p>
+
+```js
+router.post('/signin', function(req, res){
+  const email = req.body.email;
+  const password = req.body.password;
+  firebaseClient.auth().signInWithEmailAndPassword(email, password)
+  .then(function(user) {
+    req.session.uid = user.user.uid;
+    req.session.mail = req.body.email;
+    req.flash('signin', '歡迎回來！');
+    // console.log('session', req.session.uid);
+    res.redirect('/dashboard');
+  })
+  .catch(function(error){
+    console.log(error);
+    req.flash('error', error.message);//在此處傳出signin錯誤訊息
+    res.redirect('/auth/signin');
+  })
+})
+```
+
+<p>接收登入錯誤訊息。(@auth.js)</p>
+
+```js
+router.get('/signin', function(req, res){
+  const session = req.session.uid ? true : false;
+  const messages = req.flash('error');//在此處接收signin錯誤訊息
+  // console.log(messages);
+  const logout = req.flash('logout');
+  res.render('dashboard/signin', {
+    session,
+    logout,
+    hasLogout: logout.length > 0,  
+    messages,//在此將signin錯誤訊息渲染到前端
+    hasErrors: messages.length > 0,
+  })
+})
 ```
 
 <h4>2. 文章管理</h4>
