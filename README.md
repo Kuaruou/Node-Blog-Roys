@@ -63,7 +63,7 @@
 const authCheck = function (req, res, next) {
   console.log('middleware', req.session);
   if (req.session.uid === process.env.ADMIN_UID) {
-    //使別人無法登入自己的uid
+    //在環境變數設定自己的uid使別人沒有權限無法登入
     return next();
   } else {
     return res.redirect('/auth/signin');
