@@ -36,7 +36,7 @@ app.use(session({
 app.use(flash());
 
 const authCheck = function (req, res, next) {
-  console.log('middleware', req.session);
+  // console.log('middleware', req.session);
   if (req.session.uid === process.env.ADMIN_UID) {
     //使別人無法登入自己的uid，只能使用nana
     return next();
@@ -67,4 +67,4 @@ app.use(function(req, res, next) {
 
 module.exports = app;
 
-app.listen(5000);
+app.listen(7000);

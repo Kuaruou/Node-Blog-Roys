@@ -6,14 +6,20 @@ var firebaseClient = require('../connections/firebase_client');
 router.get('/signup', function(req, res){
   const messages = req.flash('error');
   res.render('dashboard/signup', {
-    messages,
+    messages,  
     hasErrors: messages.length > 0,
   })
 })
 
 router.get('/signin', function(req, res){
-  const messages = req.flash('error');
+  const session = req.session.uid ? true : false;
+  const messages = req.flash('error');//在此處接收signin錯誤訊息
+  // console.log(messages);
+  const logout = req.flash('logout');
   res.render('dashboard/signin', {
+    session,
+    logout,
+    hasLogout: logout.length > 0,  
     messages,
     hasErrors: messages.length > 0,
   })
@@ -21,6 +27,7 @@ router.get('/signin', function(req, res){
 
 router.get('/signout', function(req, res){
   req.session.uid = '';
+  req.flash('logout', '成功登出！');
   res.redirect('signin')
 })
 
@@ -30,7 +37,7 @@ router.post('/signup', function(req, res){
   const confirmPassword = req.body.confirm_password;
   if (password !== confirmPassword) {
     req.flash('error', '兩個密碼輸入不符合');
-    res.redirect('/auth/signup');
+    return res.redirect('/auth/signup');//使用return避免跳錯(Can't set headers after they are sent to the client)
   }
 
   firebaseClient.auth().createUserWithEmailAndPassword(email, password)
@@ -57,7 +64,7 @@ router.post('/signin', function(req, res){
   })
   .catch(function(error){
     console.log(error);
-    req.flash('error', error.messages);
+    req.flash('error', error.message);//在此處傳出signin錯誤訊息
     res.redirect('/auth/signin');
   })
 })
