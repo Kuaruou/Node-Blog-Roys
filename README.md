@@ -48,9 +48,23 @@
 <h3>後台</h3>
 
 <h4>登入</h4>
-<p>在Navbar右上方從後台管理進入會先要求登入，點選其他後台功能會被導回登入頁面，若未註冊按下註冊按鈕後會到註冊頁面。(本專案已由單一帳號鎖住uid故其他帳號註冊後是無法登入的。)</p>
+<p>在Navbar右上方從後台管理進入會先要求登入，點選其他後台功能會被導回登入頁面，若未註冊按下註冊按鈕後會到註冊頁面。()</p>
 
 ![image](https://github.com/Kuaruou/Node-Blog-Roys/blob/master/img/login.png)
+
+<p>本專案已由單一帳號鎖住uid故其他帳號註冊後是無法登入的。</p>
+
+```js
+const authCheck = function (req, res, next) {
+  console.log('middleware', req.session);
+  if (req.session.uid === process.env.ADMIN_UID) {
+    //使別人無法登入自己的uid
+    return next();
+  } else {
+    return res.redirect('/auth/signin');
+  }
+}
+```
 
 <h4>文章管理</h4>
 <p>登入成功後會轉址到文章管理頁面，內文上有flash會顯示一次歡迎回來的文字。可以對文章進行新增、編輯和刪除。</p>
