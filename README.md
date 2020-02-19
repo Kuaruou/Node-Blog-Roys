@@ -109,7 +109,7 @@ router.get('/signin', function(req, res){
     session,
     logout,
     hasLogout: logout.length > 0,  
-    messages,
+    messages,//在此將signin錯誤訊息渲染到前端
     hasErrors: messages.length > 0,
   })
 })
