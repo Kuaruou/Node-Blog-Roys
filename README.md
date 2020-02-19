@@ -72,7 +72,7 @@ const authCheck = function (req, res, next) {
 }
 ```
 
-<p>若輸入錯誤帳號密碼會以flash在上方出現錯誤訊息提示。connect-flash是Node.js的一個模組，簡單來說flash是一個必須搭配express-session使用的暫存器，暫存器裡面的值會被以**陣列**形式存在session中且使用過一次即被清空，這種特性相當適合當作網站的提示訊息。</p>
+<p>若輸入錯誤帳號密碼會以flash在上方出現錯誤訊息提示。connect-flash是Node.js的一個模組，簡單來說flash是一個必須搭配express-session使用的暫存器，暫存器裡面的值會被以 **陣列** 形式存在session中且使用過一次即被清空，這種特性相當適合當作網站的提示訊息。</p>
 
 ![image](https://github.com/Kuaruou/Node-Blog-Roys/blob/master/img/signin-error.png)
 
