@@ -52,11 +52,9 @@
 
 ![image](https://github.com/Kuaruou/Node-Blog-Roys/blob/master/img/login.png)
 
-<p>本專案已由單一帳號鎖住uid故其他帳號註冊後是無法登入的。</p>
+<p>本專案已由單一帳號鎖住uid故其他帳號註冊後是無法登入的。(@app.js)</p>
 
 ```js
-@app.js
-
 const authCheck = function (req, res, next) {
   console.log('middleware', req.session);
   if (req.session.uid === process.env.ADMIN_UID) {
