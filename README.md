@@ -121,7 +121,7 @@ router.get('/signin', function(req, res){
 
 ![image](https://github.com/Kuaruou/Node-Blog-Roys/blob/master/img/archives.png)
 
-<p>child和update為Firebase裡面的methods，前者為在特定相對路徑取得參數而獲得子路徑的方法，後者為更新特定子路徑下內容的方法。(@dashboard.js)</p>
+<p>選取特定文章進行編輯後更新: child和update為Firebase裡面的methods，前者為在特定相對路徑取得參數而獲得子路徑的方法，後者為更新特定子路徑下內容的方法。(@dashboard.js)</p>
 
 ```js
 router.post('/article/update/:id', function(req, res){
