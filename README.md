@@ -72,7 +72,7 @@ const authCheck = function (req, res, next) {
 }
 ```
 
-<p>若輸入錯誤帳號密碼會以flash在上方出現錯誤訊息提示。</p>
+<p>若輸入錯誤帳號密碼會以flash在上方出現錯誤訊息提示。connect-flash是Node.js的一個模組，簡單來說flash是一個必須搭配express-session使用的暫存器，暫存器裡面的值會被以*陣列*形式存在session中且使用過一次即被清空，這種特性相當適合當作網站的提示訊息。</p>
 
 ![image](https://github.com/Kuaruou/Node-Blog-Roys/blob/master/img/signin-error.png)
 
@@ -103,7 +103,7 @@ router.post('/signin', function(req, res){
 ```js
 router.get('/signin', function(req, res){
   const session = req.session.uid ? true : false;
-  const messages = req.flash('error');//在此處接收signin錯誤訊息
+  const messages = req.flash('error');//讀取signin錯誤訊息
   // console.log(messages);
   const logout = req.flash('logout');
   res.render('dashboard/signin', {
@@ -118,7 +118,6 @@ router.get('/signin', function(req, res){
 
 <h4>2. 文章管理</h4>
 <p>登入成功後會轉址到文章管理頁面，內文上有flash會顯示一次歡迎回來的文字。可以對文章進行新增、編輯和刪除。</p>
-<p>(connect-flash是Node.js的一個模組，簡單來說flash是一個暫存器，且暫存器裡面的值使用過一次即被清空，這種特性相當適合當作網站的提示訊息。)</p>
 
 ![image](https://github.com/Kuaruou/Node-Blog-Roys/blob/master/img/archives.png)
 
