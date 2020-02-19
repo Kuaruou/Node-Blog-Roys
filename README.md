@@ -121,6 +121,20 @@ router.get('/signin', function(req, res){
 
 ![image](https://github.com/Kuaruou/Node-Blog-Roys/blob/master/img/archives.png)
 
+<p>child和update為Firebase裡面的methods，前者為在特定相對路徑取得參數而獲得子路徑的方法，後者為更新特定子路徑下內容的方法。(@dashboard.js)</p>
+
+```js
+router.post('/article/update/:id', function(req, res){
+  const data = req.body;//requst裡面的內容
+  const id = req.param('id');
+  console.log(data);
+  articlesRef.child(id).update(data).then(function(){
+    //child和update為firebase裡面的methods，
+    res.redirect(`/dashboard/article/${id}`)
+  })
+})
+```
+
 <h4>3. 草稿</h4>
 <p>新增一篇文章若還沒有完稿或尚未要發布時，可以選擇存在草稿區，如此就不會顯示在前台。</p>
 
