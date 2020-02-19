@@ -45,10 +45,15 @@
 
 ![image](https://github.com/Kuaruou/Node-Blog-Roys/blob/master/img/article.png)
 
+<h4>錯誤頁面</h4>
+<p>當使用者任意修改不存在的網址時會出現錯誤頁面，且於下方提供轉址回首頁的服務。</p>
+
+![image](https://github.com/Kuaruou/Node-Blog-Roys/blob/master/img/error.png)
+
 <h3>後台</h3>
 
 <h4>登入</h4>
-<p>在Navbar右上方從後台管理進入會先要求登入，點選其他後台功能會被導回登入頁面，若未註冊按下註冊按鈕後會到註冊頁面。()</p>
+<p>在Navbar右上方從後台管理進入會先要求登入，點選其他後台功能會被導回登入頁面，若未註冊按下註冊按鈕後會到註冊頁面。</p>
 
 ![image](https://github.com/Kuaruou/Node-Blog-Roys/blob/master/img/login.png)
 
@@ -71,6 +76,31 @@ const authCheck = function (req, res, next) {
 <p>(connect-flash是Node.js的一個模組，簡單來說flash是一個暫存器，且暫存器裡面的值使用過一次即被清空，這種特性相當適合當作網站的提示訊息。)</p>
 
 ![image](https://github.com/Kuaruou/Node-Blog-Roys/blob/master/img/archives.png)
+
+<h4>刪除文章提示</h4>
+<p>當使用者按下刪除按鈕時再次跳出提示確認之後才能刪除，避免不小心刪除文章。</p>
+
+![image](https://github.com/Kuaruou/Node-Blog-Roys/blob/master/img/delete.png)
+
+<p>使用jQuery加上JS的confirm確認框，在按下確定之後才會繼續後續行為。jQuery(1.5版之後)中ajax的done是一種於請求成功時調用的回呼選項構造函式，類似於promise，對應函式為請求失敗時的fail和請求結束時的always。</p>
+```js
+$(document).ready(function(){
+    $('.deletePost').on('click', function(e){
+      e.preventDefault();
+      var id = $(this).data('id');
+      var title = $(this).data('title');
+      if (confirm('確認是否刪除' + title )){
+        $.ajax({
+          url: '/dashboard/article/delete/' + id,
+          method: 'POST', 
+        }).done(function(response){
+          console.log(response)
+          window.location = '/dashboard'
+        })
+      }
+    })
+  })
+```
 
 <h4>分類管理</h4>
 <p>分類管理可以對文章類別進行新增、編輯和刪除。若文章沒有類別則會顯示沒有分類。</p>
