@@ -145,7 +145,7 @@ router.post('/article/update/:id', function(req, res){
 
 ![image](https://github.com/Kuaruou/Node-Blog-Roys/blob/master/img/delete.png)
 
-<p>使用jQuery加上JS的confirm確認框，在按下確定之後才會繼續後續行為。jQuery(1.5版之後)中ajax的done是一種於請求成功時調用的回呼選項構造函式，類似於promise，對應函式為請求失敗時的fail和請求結束時的always。</p>
+<p>使用jQuery加上JS的confirm確認框，在按下確定之後才會繼續後續行為。jQuery(1.5版之後)中ajax的done是一種於請求成功時調用的回呼選項構造函式，類似於promise，對應函式為請求失敗時的fail和請求結束時的always。(@archives.ejs)</p>
 
 ```js
 $(document).ready(function(){
