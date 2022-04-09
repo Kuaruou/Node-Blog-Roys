@@ -18,7 +18,7 @@
     "firebase-admin": "^8.9.2",
     "@firebase/app": "^0.5.4",
     "http-errors": "~1.6.3",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "morgan": "~1.9.1",
     "striptags": "^3.2.0"
   }
